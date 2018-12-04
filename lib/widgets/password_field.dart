@@ -12,7 +12,6 @@ class PasswordField extends StatefulWidget {
 
 class PasswordFieldState extends State<PasswordField>{
   bool _hidden = true;
-  String _error;
 
   @override
   void initState() {

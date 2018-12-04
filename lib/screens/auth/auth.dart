@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vapp/screens/auth/login_form.dart';
-import 'package:vapp/services/rest.dart';
-import 'package:vapp/widgets/password_field.dart';
-import 'package:vapp/widgets/email_field.dart';
-import 'package:vapp/widgets/signin_button.dart';
+import 'package:vapp/util/auth_util.dart';
 
 class Auth extends StatefulWidget {
   @override
@@ -13,8 +10,6 @@ class Auth extends StatefulWidget {
 
 class AuthState extends State<Auth> {
   final scaffoldKey = new GlobalKey<ScaffoldState>();
-  bool _passhidden = true;
-  bool _isLoading = false;
   String passError, nameError;
 
   TextEditingController usernameTextController = new TextEditingController();
@@ -25,12 +20,12 @@ class AuthState extends State<Auth> {
   @override
   void initState(){
     super.initState();
+    fetchSessionAndNavigate();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
   }
-
   @override
   dispose(){
     super.dispose();
@@ -43,39 +38,12 @@ class AuthState extends State<Auth> {
   }
 
 
-
-  void _signin() async {
-    final String pass = passwordTextController.text;
-    final String username = usernameTextController.text;
-    String passErrorText, usernameError;
-    // validate password
-    if(pass.length < 5){
-      passErrorText = 'Password must be longer than 5 characters';
-    } else if (!['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-        .any((c) => pass.contains(c))){
-      passErrorText = 'Password must include numbers';
-    } else if (pass.toLowerCase() == pass || pass.toUpperCase() == pass) {
-      passErrorText = 'Password must include both lower and upper case characters';
-    } else if (username.isEmpty){
-      usernameError = 'Username must be filled in';
-    }
-    // attempt signin
-    if(passErrorText != null || usernameError != null){
-      setState(() {
-        passError = passErrorText;
-        nameError = usernameError;
-      });
-      return;
-    }
-    RestDatasource api = new RestDatasource();
-
-    bool loggedIn = await api.login(username, pass);
-    // route if succesfull
-    if (loggedIn) {
-      print("success");
+  void fetchSessionAndNavigate() async {
+    bool hasToken = await AuthUtil.isLoggedIn();
+    if (hasToken) {
       Navigator.of(context).popAndPushNamed('/main');
     } else {
-      // something went wrong set general error
+      print("No session, wait for login attempt");
     }
   }
 

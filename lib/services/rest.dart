@@ -5,10 +5,9 @@ import 'package:vapp/util/auth_util.dart';
 
 class RestDatasource {
   NetworkUtil _netUtil = new NetworkUtil();
-  static final BASE_URL = "https://vapp-server.herokuapp.com";
-  static final LOGIN_URL = BASE_URL + "/rest-auth/login/";
-  static final LOGOUT_URL = BASE_URL + "/rest-auth/logout";
-  static final _API_KEY = "";
+  static const BASE_URL = "https://vapp-server.herokuapp.com";
+  static const LOGIN_URL = BASE_URL + "/rest-auth/login/";
+  static const LOGOUT_URL = BASE_URL + "/rest-auth/logout/";
 
   Future<bool> login(String username, String password) {
     return _netUtil.post(LOGIN_URL, body: {
@@ -24,6 +23,7 @@ class RestDatasource {
   Future<bool> logout(){
     return _netUtil.post(LOGOUT_URL)
         .then((dynamic res) {
+      AuthUtil.removeCredentials();
       return true;
     });
   }

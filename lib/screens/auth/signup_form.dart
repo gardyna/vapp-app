@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vapp/widgets/email_field.dart';
 import 'package:vapp/widgets/password_field.dart';
-import 'package:vapp/widgets/signin_button.dart';
 
 class SignUpForm extends StatefulWidget {
   @override

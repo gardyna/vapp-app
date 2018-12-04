@@ -18,7 +18,7 @@ class LoginFormState extends State<LoginForm> {
   TextEditingController emailTextController = new TextEditingController();
   TextEditingController passwordTextController = new TextEditingController();
 
-  void _signin() async {
+  void _signIn() async {
     final String pass = passwordTextController.text;
     final String email = emailTextController.text;
     String passErrorText, usernameError;
@@ -44,7 +44,7 @@ class LoginFormState extends State<LoginForm> {
     RestDatasource api = new RestDatasource();
 
     bool loggedIn = await api.login(email, pass);
-    // route if succesfull
+    // route if successful
     if (loggedIn) {
       print("success");
       Navigator.of(context).popAndPushNamed('/main');
@@ -69,7 +69,7 @@ class LoginFormState extends State<LoginForm> {
         ),
         Container(height: 10.0,),
         SigninButton(
-          onPress: _signin,
+          onPress: _signIn,
         )
       ],
     );
