@@ -63,7 +63,7 @@ class AuthState extends State<Auth> {
             Text("The event app",
               style: Theme.of(context).primaryTextTheme.caption,
             ),
-            Container(height: 50.0,),
+            Container(height: 60.0,),
             Container(
               child: _loginForm,
               width: 300.0,
@@ -71,10 +71,10 @@ class AuthState extends State<Auth> {
               //margin: EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(5.0))
+                borderRadius: BorderRadius.all(Radius.circular(20.0))
               ),
             ),
-          ],
+          ]
         )
       ),
     );

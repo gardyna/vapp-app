@@ -58,19 +58,25 @@ class LoginFormState extends State<LoginForm> {
     return Column(
       children: <Widget>[
         Text("SIGN IN", textScaleFactor: 2.0,),
+        Container(height: 60.0,),
         EmailField(
           controller: emailTextController,
           error: nameError,
         ),
-        Container(height: 10.0,),
+        Container(height: 20.0,),
         PasswordField(
           controller: passwordTextController,
           error: passError,
         ),
-        Container(height: 10.0,),
+        Container(height: 20.0,),
         SigninButton(
           onPress: _signIn,
-        )
+        ),
+
+        Container(height: 10.0,),
+        Text("or use"),
+        Container(height: 50.0,),
+        Text("Swipe to sign up "),
       ],
     );
   }
