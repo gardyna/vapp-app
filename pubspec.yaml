@@ -55,12 +55,12 @@ flutter:
   fonts:
     - family: Cera-Pro
       fonts:
-        - asset: fonts/Cera-Pro-Regular.otf
-        - asset: fonts/Cera-Pro-Regular-Italic.otf
+        - asset: res/fonts/Cera-Pro-Regular.otf
+        - asset: res/fonts/Cera-Pro-Regular-Italic.otf
           style: italic
-        - asset: fonts/Cera-Pro-Bold.otf
+        - asset: res/fonts/Cera-Pro-Bold.otf
           weight: 700
-        - asset: fonts/Cera-Pro-Bold-Italic.otf
+        - asset: res/fonts/Cera-Pro-Bold-Italic.otf
           weight: 700
           style: italic
   #   - family: Trajan Pro
