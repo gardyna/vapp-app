@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:vapp/generated/i18n.dart';
 import 'package:vapp/screens/auth/login_form.dart';
 import 'package:vapp/util/auth_util.dart';
 
@@ -57,10 +58,10 @@ class AuthState extends State<Auth> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text("Vapp",
+            Text(S.of(context).vapp,
               style: Theme.of(context).primaryTextTheme.title,
             ),
-            Text("The event app",
+            Text(S.of(context).app_subtitle,
               style: Theme.of(context).primaryTextTheme.caption,
             ),
             Container(height: 60.0,),

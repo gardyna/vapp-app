@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'screens/auth/index.dart';
-import 'screens/main/index.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'package:vapp/generated/i18n.dart';
+import 'package:vapp/screens/auth/index.dart';
+import 'package:vapp/screens/main/index.dart';
 
 void main() => runApp(new MyApp());
 
@@ -16,6 +19,12 @@ class MyApp extends StatelessWidget {
       title: 'Vapp',
       routes: routes,
       home: Auth(),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         fontFamily: 'Cera-Pro',
         backgroundColor: Color.fromARGB(0, 23, 23, 23),

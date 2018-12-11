@@ -18,6 +18,20 @@ class S implements WidgetsLocalizations {
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
+  String get app_subtitle => "The event app";
+  String get vapp => "Vapp";
+}
+
+class isl extends S {
+  const isl();
+
+  @override
+  TextDirection get textDirection => TextDirection.ltr;
+
+  @override
+  String get app_subtitle => "Viðburða app-ið";
+  @override
+  String get vapp => "Vappið";
 }
 
 class en extends S {
@@ -29,6 +43,7 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
+      Locale("isl", ""),
       Locale("en", ""),
     ];
   }
@@ -70,6 +85,8 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
     final String lang = getLang(locale);
     if (lang != null) {
       switch (lang) {
+        case "isl":
+          return SynchronousFuture<S>(const isl());
         case "en":
           return SynchronousFuture<S>(const en());
         default:
