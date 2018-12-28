@@ -12,30 +12,37 @@ class S implements WidgetsLocalizations {
   const S();
 
   static const GeneratedLocalizationsDelegate delegate =
-      GeneratedLocalizationsDelegate();
+    GeneratedLocalizationsDelegate();
 
   static S of(BuildContext context) => Localizations.of<S>(context, S);
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
+
   String get app_subtitle => "The event app";
+  String get or_use => "Or use";
+  String get sign_in => "SIGN IN";
   String get vapp => "Vapp";
 }
 
-class isl extends S {
-  const isl();
+class $en extends S {
+  const $en();
+}
+
+class $is extends S {
+  const $is();
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
   @override
-  String get app_subtitle => "Viðburða app-ið";
+  String get app_subtitle => "The event app";
   @override
-  String get vapp => "Vappið";
-}
-
-class en extends S {
-  const en();
+  String get or_use => "Eða Notaðu";
+  @override
+  String get vapp => "Vapp";
+  @override
+  String get sign_in => "SKRÁ INN";
 }
 
 class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
@@ -43,8 +50,8 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale("isl", ""),
       Locale("en", ""),
+      Locale("is", ""),
     ];
   }
 
@@ -85,12 +92,12 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
     final String lang = getLang(locale);
     if (lang != null) {
       switch (lang) {
-        case "isl":
-          return SynchronousFuture<S>(const isl());
         case "en":
-          return SynchronousFuture<S>(const en());
+          return SynchronousFuture<S>(const $en());
+        case "is":
+          return SynchronousFuture<S>(const $is());
         default:
-        // NO-OP.
+          // NO-OP.
       }
     }
     return SynchronousFuture<S>(const S());
@@ -98,14 +105,14 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<S> {
 
   @override
   bool isSupported(Locale locale) =>
-      locale != null && supportedLocales.contains(locale);
+    locale != null && supportedLocales.contains(locale);
 
   @override
   bool shouldReload(GeneratedLocalizationsDelegate old) => false;
 }
 
 String getLang(Locale l) => l == null
-    ? null
-    : l.countryCode != null && l.countryCode.isEmpty
-        ? l.languageCode
-        : l.toString();
+  ? null
+  : l.countryCode != null && l.countryCode.isEmpty
+    ? l.languageCode
+    : l.toString();

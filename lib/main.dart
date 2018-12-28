@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Vapp',
+      title: "Vapp",
       routes: routes,
       home: Auth(),
       localizationsDelegates: const [

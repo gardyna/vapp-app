@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:vapp/generated/i18n.dart';
 import 'package:vapp/screens/auth/login_form.dart';
+import 'package:vapp/screens/auth/signup_form.dart';
 import 'package:vapp/util/auth_util.dart';
 
 class Auth extends StatefulWidget {
@@ -10,8 +11,10 @@ class Auth extends StatefulWidget {
 }
 
 class AuthState extends State<Auth> {
-  final scaffoldKey = new GlobalKey<ScaffoldState>();
+  final _scaffoldKey = new GlobalKey<ScaffoldState>();
   String passError, nameError;
+
+  PageController _pageController = new PageController();
 
   TextEditingController usernameTextController = new TextEditingController();
   TextEditingController passwordTextController = new TextEditingController();
@@ -22,20 +25,6 @@ class AuthState extends State<Auth> {
   void initState(){
     super.initState();
     fetchSessionAndNavigate();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
-  }
-  @override
-  dispose(){
-    super.dispose();
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeRight,
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
   }
 
 
@@ -51,7 +40,7 @@ class AuthState extends State<Auth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
+      key: _scaffoldKey,
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Column(
@@ -66,13 +55,25 @@ class AuthState extends State<Auth> {
             ),
             Container(height: 60.0,),
             Container(
-              child: _loginForm,
-              width: 300.0,
-              padding: EdgeInsets.all(8.0),
-              //margin: EdgeInsets.all(8.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(20.0))
+              child: Expanded(
+                flex: 2,
+
+                child: PageView(
+                  controller: _pageController,
+                  onPageChanged: (i){
+                    // set state to know which form is visible
+                  },
+                  children: <Widget>[
+                    ConstrainedBox(
+                      constraints: const BoxConstraints.expand(),
+                      child: LoginForm(),
+                    ),
+                    ConstrainedBox(
+                      constraints: const BoxConstraints.expand(),
+                      child: SignUpForm(),
+                    )
+                  ],
+                ),
               ),
             ),
           ]
