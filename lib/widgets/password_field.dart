@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 class PasswordField extends StatefulWidget {
   final TextEditingController controller;
   final String error;
-  PasswordField({Key key, this.controller, this.error}) : super(key: key);
+  String text;
+  PasswordField({Key key, this.controller, this.error, this.text}) : super(key: key);
 
   @override
   State<PasswordField> createState() => PasswordFieldState();
@@ -36,7 +37,7 @@ class PasswordFieldState extends State<PasswordField>{
           icon: Icon(_hidden == true ? Icons.lock : Icons.lock_open),
           label: Container()
         ),
-        labelText: 'Password',
+        labelText: widget.text ?? 'Password',
         labelStyle: TextStyle(
           color: Colors.black,
         )

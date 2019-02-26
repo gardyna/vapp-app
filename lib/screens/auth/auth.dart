@@ -41,6 +41,7 @@ class AuthState extends State<Auth> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
         child: Column(
@@ -56,24 +57,23 @@ class AuthState extends State<Auth> {
             Container(height: 60.0,),
             Container(
               child: Expanded(
-                flex: 2,
-
+                flex:1,
                 child: PageView(
                   controller: _pageController,
                   onPageChanged: (i){
                     // set state to know which form is visible
                   },
                   children: <Widget>[
-                    ConstrainedBox(
-                      constraints: const BoxConstraints.expand(),
-                      child: LoginForm(),
+                    Padding(
+                        padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 80.0),
+                        child: LoginForm()
                     ),
-                    ConstrainedBox(
-                      constraints: const BoxConstraints.expand(),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 80.0),
                       child: SignUpForm(),
                     )
                   ],
-                ),
+                  ),
               ),
             ),
           ]

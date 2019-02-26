@@ -64,8 +64,10 @@ class LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10.0),
       color: Colors.white,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(S.of(context).sign_in, textScaleFactor: 2.0,),
           Container(height: 60.0,),

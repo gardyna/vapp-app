@@ -14,7 +14,7 @@ class MainScreen extends StatelessWidget {
         child: FlatButton(onPressed: () async {
           RestDatasource source = RestDatasource();
           await source.logout(); // remember await otherwise auth screen redirects back
-          Navigator.of(context).popAndPushNamed('/login');
+          Navigator.of(context).pushNamed('/login');
         }, child: Text("LOGOUT")),
       ),
     );
