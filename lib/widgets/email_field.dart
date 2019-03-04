@@ -12,7 +12,7 @@ class EmailField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         errorText: this.error,
-        border: OutlineInputBorder(),
+        border: UnderlineInputBorder(),
         labelText: 'email',
         labelStyle: TextStyle(
           color: Colors.black

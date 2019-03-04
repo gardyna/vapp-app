@@ -28,18 +28,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Cera-Pro',
         backgroundColor: Color.fromARGB(0, 23, 23, 23),
-        primaryColor: Colors.black,
-        primarySwatch: Colors.red,
-        accentColor: Colors.black,
-        primaryTextTheme: TextTheme(
-          title: TextStyle(
-            color: Colors.white,
-            fontSize: 80.0,
-          ),
-          caption: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-          ),
+        //primaryColor: Colors.black,
+        //primarySwatch: Colors.red,
+        //accentColor: Colors.black,
+        textTheme: TextTheme(
+          headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          title: TextStyle(fontSize: 36.0, color: Colors.white),
+          body1: TextStyle(fontSize: 14.0, color: Colors.white),
         ),
       ),
     );

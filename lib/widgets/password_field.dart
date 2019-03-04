@@ -27,7 +27,7 @@ class PasswordFieldState extends State<PasswordField>{
       obscureText: _hidden,
       decoration: InputDecoration(
         errorText: widget.error,
-        border: OutlineInputBorder(),
+        border: UnderlineInputBorder(),
         suffixIcon: FlatButton.icon(
           onPressed: (){
             setState(() {
@@ -39,7 +39,7 @@ class PasswordFieldState extends State<PasswordField>{
         ),
         labelText: widget.text ?? 'Password',
         labelStyle: TextStyle(
-          color: Colors.black,
+          color: Colors.white,
         )
       ),
     );
