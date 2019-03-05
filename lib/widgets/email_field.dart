@@ -14,8 +14,9 @@ class EmailField extends StatelessWidget {
         errorText: this.error,
         border: UnderlineInputBorder(),
         labelText: 'email',
+        contentPadding: EdgeInsets.all(10),
         labelStyle: TextStyle(
-          color: Colors.black
+          //color: Colors.black
         )
       ),
     );

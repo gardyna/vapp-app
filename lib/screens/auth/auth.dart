@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:vapp/generated/i18n.dart';
-import 'package:vapp/screens/auth/login_form.dart';
-import 'package:vapp/screens/auth/signup_form.dart';
 import 'package:vapp/util/auth_util.dart';
 import 'package:vapp/widgets/email_field.dart';
 import 'package:vapp/widgets/password_field.dart';
@@ -18,8 +14,6 @@ class AuthState extends State<Auth> {
 
   TextEditingController emailTextController = new TextEditingController();
   TextEditingController passwordTextController = new TextEditingController();
-
-  LoginForm _loginForm = LoginForm();
 
   @override
   void initState(){
@@ -40,6 +34,7 @@ class AuthState extends State<Auth> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       key: _scaffoldKey,
       backgroundColor: Theme.of(context).backgroundColor,
       body: Center(
@@ -47,20 +42,43 @@ class AuthState extends State<Auth> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Text("Sign Up", style: Theme.of(context).textTheme.title,),
-              Container(
-                color: Colors.white,
-                child: EmailField(controller: emailTextController, error: nameError),
+              Expanded(
+                  child: Center(
+                      child: Text("Sign Up", style: Theme.of(context).textTheme.title,)
+                  ),
+                flex: 4,
               ),
-              Container(height: 10,),
-              Container(
-                color: Colors.white,
-                child: PasswordField(controller: passwordTextController, error: passError),
+              Flexible(
+                fit: FlexFit.loose,
+                flex: 1,
+                child: Container(
+                  color: Colors.white,
+                  child: EmailField(controller: emailTextController, error: nameError),
+                ),
               ),
-              Container(height: 10,),
-              Text("or use", style: Theme.of(context).textTheme.body1,),
+              Expanded(
+                flex: 1,
+                child: Container(),),
+              Flexible(
+                flex: 1,
+                fit: FlexFit.loose,
+                child: Container(
+                  color: Colors.white,
+                  child: PasswordField(controller: passwordTextController, error: passError),
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                  child: Center(
+                      child: Text("or use", style: Theme.of(context).textTheme.body1,),
+                  )
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(),
+              )
             ],
           ),
         ),

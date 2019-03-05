@@ -38,9 +38,7 @@ class PasswordFieldState extends State<PasswordField>{
           label: Container()
         ),
         labelText: widget.text ?? 'Password',
-        labelStyle: TextStyle(
-          color: Colors.white,
-        )
+        contentPadding: EdgeInsets.all(10)
       ),
     );
   }
