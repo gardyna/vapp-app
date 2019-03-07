@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:vapp/generated/i18n.dart';
-import 'package:vapp/screens/auth/index.dart';
+import 'package:vapp/screens/sign_up/index.dart';
 import 'package:vapp/screens/main/index.dart';
 
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
-    '/login': (BuildContext context) => Auth(),
+    '/login': (BuildContext context) => SignUpPage(),
     '/main': (BuildContext context) => MainScreen(),
   };
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: "Vapp",
       routes: routes,
-      home: Auth(),
+      home: SignUpPage(),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

@@ -3,12 +3,12 @@ import 'package:vapp/util/auth_util.dart';
 import 'package:vapp/widgets/email_field.dart';
 import 'package:vapp/widgets/password_field.dart';
 
-class Auth extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  State<Auth> createState()  => AuthState();
+  State<SignUpPage> createState()  => SignUpPageState();
 }
 
-class AuthState extends State<Auth> {
+class SignUpPageState extends State<SignUpPage> {
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
   String passError, nameError;
 
