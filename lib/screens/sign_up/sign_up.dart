@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vapp/util/auth_util.dart';
 import 'package:vapp/widgets/email_field.dart';
 import 'package:vapp/widgets/password_field.dart';
+import 'package:vapp/screens/sign_up/social_buttons.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -75,8 +76,12 @@ class SignUpPageState extends State<SignUpPage> {
                       child: Text("or use", style: Theme.of(context).textTheme.body1,),
                   )
               ),
+              Flexible(
+                flex: 1,
+                child: new SocialButtons(buttonSize: 50.0,),
+              ),
               Expanded(
-                flex: 4,
+                flex: 3,
                 child: Container(),
               )
             ],
