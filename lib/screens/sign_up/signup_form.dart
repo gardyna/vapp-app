@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:vapp/generated/i18n.dart';
 import 'package:vapp/widgets/email_field.dart';
 import 'package:vapp/widgets/password_field.dart';
 
+///
+/// Form for filling out email and password
+///
 class SignUpForm extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => SignUpFormState();
@@ -19,37 +21,26 @@ class SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10.0),
-      color: Colors.white,
+    return Padding(
+      padding: EdgeInsets.only(left: 20.0, right: 20.0),
       child: Column(
-
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text("SIGN UP", textScaleFactor: 2.0),
-            Container(height: 60.0,),
-            EmailField(
+        children: <Widget>[
+          Container(
+            color: Colors.white,
+            child: EmailField(
               controller: emailTextController,
               error: nameError,
             ),
-            Container(height: 20.0,),
-            PasswordField(
+          ),
+          SizedBox(height: 20.0,),
+          Container(
+            color: Colors.white,
+            child: PasswordField(
               controller: passwordTextController,
               error: passError,
             ),
-            Container(height: 20.0,),
-            PasswordField(
-              controller: passwordTextController,
-              error: passError,
-              text: "Re-enter password",
-            ),
-
-            Container(height: 10.0,),
-            Text(S.of(context).or_use),
-            Container(height: 50.0,),
-            Text("Already have an acount?"),
-            Text("<-"),
-          ],
+          ),
+        ],
       ),
     );
 

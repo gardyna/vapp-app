@@ -13,25 +13,26 @@ class SocialButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         IconButton(
           icon: Icon(SocialIcons.facebook_circled,
             color: Colors.white,
-            size: buttonSize,
           ),
           onPressed: (){
             print("Faceboook pushed");
           },
+          iconSize: buttonSize,
         ),
-        Container(width: 30,),
+        Container(width: 20,),
         IconButton(
           icon: Icon(SocialIcons.google_plus_circle,
             color:  Colors.white,
-            size: buttonSize,
           ),
           onPressed: (){
             print("Google Pushed");
           },
+          iconSize: buttonSize,
         ),
       ],
     );

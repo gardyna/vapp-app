@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vapp/screens/sign_up/signup_form.dart';
 import 'package:vapp/util/auth_util.dart';
-import 'package:vapp/widgets/email_field.dart';
-import 'package:vapp/widgets/password_field.dart';
 import 'package:vapp/screens/sign_up/social_buttons.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -38,55 +37,60 @@ class SignUpPageState extends State<SignUpPage> {
       resizeToAvoidBottomPadding: false,
       key: _scaffoldKey,
       backgroundColor: Theme.of(context).backgroundColor,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                  child: Center(
-                      child: Text("Sign Up", style: Theme.of(context).textTheme.title,)
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+              child: Center(
+                  child: Text("SIGN UP",
+                    style: Theme.of(context).textTheme.title,
                   ),
-                flex: 4,
               ),
-              Flexible(
-                fit: FlexFit.loose,
-                flex: 1,
-                child: Container(
-                  color: Colors.white,
-                  child: EmailField(controller: emailTextController, error: nameError),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(),),
-              Flexible(
-                flex: 1,
-                fit: FlexFit.loose,
-                child: Container(
-                  color: Colors.white,
-                  child: PasswordField(controller: passwordTextController, error: passError),
-                ),
-              ),
-              Flexible(
-                flex: 1,
-                  child: Center(
-                      child: Text("or use", style: Theme.of(context).textTheme.body1,),
-                  )
-              ),
-              Flexible(
-                flex: 1,
-                child: new SocialButtons(buttonSize: 50.0,),
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(),
-              )
-            ],
+            flex: 4,
           ),
-        ),
+          SignUpForm(),
+          Flexible(
+            flex: 1,
+              child: Center(
+                  child: Text("or use",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+              )
+          ),
+          Flexible(
+            flex: 1,
+            child: new SocialButtons(buttonSize: 50.0,),
+          ),
+          Flexible(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: GestureDetector(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text("already have an account?",
+                        style: Theme.of(context).textTheme.body1,
+                      ),
+                      Text(" log in",
+                        style: Theme.of(context).textTheme.body1
+                            .apply(color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                  onTap: () {
+                    print("Navigate to log in");
+                  },
+                ),
+              ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(),
+          )
+        ],
       ),
     );
   }

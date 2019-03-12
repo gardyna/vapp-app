@@ -5,7 +5,8 @@ class PasswordField extends StatefulWidget {
   final TextEditingController controller;
   final String error;
   String text;
-  PasswordField({Key key, this.controller, this.error, this.text}) : super(key: key);
+  PasswordField({Key key, this.controller, this.error, this.text})
+      : super(key: key);
 
   @override
   State<PasswordField> createState() => PasswordFieldState();
@@ -37,7 +38,7 @@ class PasswordFieldState extends State<PasswordField>{
           icon: Icon(_hidden == true ? Icons.lock : Icons.lock_open),
           label: Container()
         ),
-        labelText: widget.text ?? 'Password',
+        labelText: widget.text ?? 'password',
         contentPadding: EdgeInsets.all(10)
       ),
     );
