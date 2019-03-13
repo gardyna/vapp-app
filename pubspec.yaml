@@ -7,11 +7,12 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
+  google_sign_in: ^4.0.1
   flutter:
     sdk: flutter
   flutter_localizations:
       sdk: flutter
-  google_sign_in: ^4.0.1+1
+
   cupertino_icons: ^0.1.2
   shared_preferences: ^0.5.1+1
   http: ^0.12.0
