@@ -9,6 +9,9 @@ class SocialButtons extends StatelessWidget {
     this.buttonSize,
   }) : super(key: key);
 
+  void _googleSignIn() async {
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
