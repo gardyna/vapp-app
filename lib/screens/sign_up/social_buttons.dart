@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vapp/Presentation/social_icons_icons.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class SocialButtons extends StatelessWidget {
   final double buttonSize;
@@ -9,7 +10,24 @@ class SocialButtons extends StatelessWidget {
     this.buttonSize,
   }) : super(key: key);
 
-  void _googleSignIn() async {
+  static GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: [
+      'email',
+    ]
+  );
+
+  void _signInGoogle(BuildContext context) async {
+    try {
+      _googleSignIn.signIn();
+      print((await _googleSignIn.currentUser.authentication).accessToken);
+      if (await _googleSignIn.isSignedIn()){
+        // navigate to main
+        //Navigator.of(context).popAndPushNamed('/main');
+      }
+    } catch (error) {
+      print(error);
+    }
+
   }
 
   @override
@@ -34,9 +52,7 @@ class SocialButtons extends StatelessWidget {
             color:  Colors.white,
           ),
           padding: EdgeInsets.all(4.0), // decrease padding to keep alignment
-          onPressed: (){
-            print("Google Pushed");
-          },
+          onPressed: () => _signInGoogle(context),
           iconSize: buttonSize,
         ),
       ],
