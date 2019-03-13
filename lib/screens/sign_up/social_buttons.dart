@@ -27,7 +27,6 @@ class SocialButtons extends StatelessWidget {
     } catch (error) {
       print(error);
     }
-
   }
 
   @override
