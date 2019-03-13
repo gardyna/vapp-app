@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vapp/Presentation/social_icons_icons.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 
 class SocialButtons extends StatelessWidget {
   final double buttonSize;
@@ -40,8 +41,23 @@ class SocialButtons extends StatelessWidget {
             color: Colors.white,
           ),
           padding: EdgeInsets.all(4.0), // decrease padding to keep alignment
-          onPressed: (){
+          onPressed: () async {
             print("Faceboook pushed");
+            final FacebookLogin _login = FacebookLogin();
+            final result = await _login.logInWithReadPermissions(['email']);
+
+            switch (result.status){
+              case FacebookLoginStatus.loggedIn:
+                print(result.accessToken);
+                break;
+              case FacebookLoginStatus.cancelledByUser:
+                print('cancelled');
+                break;
+              case FacebookLoginStatus.error:
+                print(result.errorMessage);
+                break;
+            }
+
           },
           iconSize: buttonSize,
         ),
