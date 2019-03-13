@@ -19,6 +19,7 @@ class SocialButtons extends StatelessWidget {
           icon: Icon(SocialIcons.facebook_circled,
             color: Colors.white,
           ),
+          padding: EdgeInsets.all(4.0), // decrease padding to keep alignment
           onPressed: (){
             print("Faceboook pushed");
           },
@@ -29,6 +30,7 @@ class SocialButtons extends StatelessWidget {
           icon: Icon(SocialIcons.google_plus_circle,
             color:  Colors.white,
           ),
+          padding: EdgeInsets.all(4.0), // decrease padding to keep alignment
           onPressed: (){
             print("Google Pushed");
           },

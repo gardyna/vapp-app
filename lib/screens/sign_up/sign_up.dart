@@ -60,7 +60,7 @@ class SignUpPageState extends State<SignUpPage> {
           ),
           Flexible(
             flex: 1,
-            child: new SocialButtons(buttonSize: 50.0,),
+            child: Center(child: SocialButtons(buttonSize: 50.0,)),
           ),
           Flexible(
               flex: 1,
@@ -71,13 +71,13 @@ class SignUpPageState extends State<SignUpPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Text("already have an account?",
+                     /* Text("already have an account?",
                         style: Theme.of(context).textTheme.body1,
                       ),
                       Text(" log in",
                         style: Theme.of(context).textTheme.body1
                             .apply(color: Colors.blue),
-                      ),
+                      ),*/
                     ],
                   ),
                   onTap: () {
