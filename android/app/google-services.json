@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "811865302513",
+    "firebase_url": "https://vapp-c4b9a.firebaseio.com",
+    "project_id": "vapp-c4b9a",
+    "storage_bucket": "vapp-c4b9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811865302513:android:517169b77ee231e0",
+        "android_client_info": {
+          "package_name": "com.events.vapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811865302513-dtc4me3q4s2sb4v4kmt350ef67vbhpud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.events.vapp",
+            "certificate_hash": "d380a1ca43a0cac65198dbb6aaf46089ee398605"
+          }
+        },
+        {
+          "client_id": "811865302513-hh6vkq7uam62nct08u4mun0s9gar8nob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIU4D3cGV94rsI4HPTrmMlX0k5V5G9_TM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811865302513-hh6vkq7uam62nct08u4mun0s9gar8nob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
