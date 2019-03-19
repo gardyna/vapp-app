@@ -40,10 +40,9 @@ class SignUpFormState extends State<SignUpForm> {
               error: passError,
             ),
           ),
+          Text("->", style: Theme.of(context).textTheme.title),
         ],
       ),
     );
-
   }
-
 }

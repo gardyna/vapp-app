@@ -19,7 +19,9 @@ class SocialButtons extends StatelessWidget {
 
   void _signInGoogle(BuildContext context) async {
     try {
+      print("google sign in");
       _googleSignIn.signIn();
+      print("sign in atttempted");
       print((await _googleSignIn.currentUser.authentication).accessToken);
       if (await _googleSignIn.isSignedIn()){
         // navigate to main
@@ -57,7 +59,6 @@ class SocialButtons extends StatelessWidget {
                 print(result.errorMessage);
                 break;
             }
-
           },
           iconSize: buttonSize,
         ),

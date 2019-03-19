@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         fontFamily: 'Cera-Pro',
-        backgroundColor: Color.fromARGB(0, 23, 23, 23),
+        backgroundColor: Color.fromARGB(0, 18, 18, 18),
         //primaryColor: Colors.black,
         //primarySwatch: Colors.red,
         //accentColor: Colors.black,

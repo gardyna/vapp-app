@@ -43,7 +43,7 @@ class SignUpPageState extends State<SignUpPage> {
         children: <Widget>[
           Expanded(
               child: Center(
-                  child: Text("SIGN UP",
+                  child: Text("sign ups",
                     style: Theme.of(context).textTheme.title,
                   ),
               ),
