@@ -40,7 +40,13 @@ class SignUpFormState extends State<SignUpForm> {
               error: passError,
             ),
           ),
-          Text("->", style: Theme.of(context).textTheme.title),
+          GestureDetector(
+            child: Text("➡️", style: Theme.of(context).textTheme.title),
+            onTap: () {
+              print("Navigate to main page");
+              Navigator.of(context).popAndPushNamed('/main');
+            },
+          ),
         ],
       ),
     );

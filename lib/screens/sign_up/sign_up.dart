@@ -62,32 +62,8 @@ class SignUpPageState extends State<SignUpPage> {
             flex: 1,
             child: Center(child: SocialButtons(buttonSize: 50.0,)),
           ),
-          Flexible(
-              flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: GestureDetector(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                     /* Text("already have an account?",
-                        style: Theme.of(context).textTheme.body1,
-                      ),
-                      Text(" log in",
-                        style: Theme.of(context).textTheme.body1
-                            .apply(color: Colors.blue),
-                      ),*/
-                    ],
-                  ),
-                  onTap: () {
-                    print("Navigate to log in");
-                  },
-                ),
-              ),
-          ),
           Expanded(
-            flex: 3,
+            flex: 5,
             child: Container(),
           )
         ],
